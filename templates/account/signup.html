@@ -1,0 +1,41 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+<div class="container h-100 p-3">
+  <div class="row h-100  no-gutters d-flex  justify-content-center align-items-center pt-3 pb-3 p-sm-0">
+
+    {% comment %} 1 {% endcomment %}
+    <div class="signup-container h-100 col-12 col-md-6  d-flex flex-column justify-content-center align-items-center p-4 bg-light-blue border rounded-right position-relative ">
+       <img class='mobile-form-logo d-sm-none  img-fluid rounded-circle w-25 position-absolute' src="{% static 'img/login_illustration2.png' %}"  alt="login-image">
+     
+<h4 class="=text-center font-weight-bolder m-0">{% trans "Sign Up" %}</h4>
+
+<p class="text-center" >{% blocktrans %}Already have an account? Then please <a class=" btn btn-outline-primary btn-sm" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+<form class="signup  d-block w-100 h-100 overflow-auto" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  <!-- {{ form.as_p }} -->
+  {{ form | crispy }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button class="btn btn-primary btn-block" type="submit">{% trans "Sign Up" %} &raquo;</button>
+</form>
+
+</div>
+
+{% comment %} 2{% endcomment %}
+ <div class="welcome-message bg-primary col-12 col-md-4 h-100 d-none  d-md-flex flex-column justify-content-center align-items-center p-4 m-0 border text-white">
+  <img class='img-fluid rounded-circle w-75' src="{% static 'img/login_illustration.png' %}"  alt="login-image">
+  <h4 class="mt-2 text-center font-weight-bolder mb-0">Get Started</h4>  
+  <p class="text-center">Join us today and cease wonderful opportunities... </p>
+    </div>
+</div>
+</div>
+{% endblock %}

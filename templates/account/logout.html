@@ -1,0 +1,36 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+
+
+<div class="container h-100 p-3">
+  <div class="row h-100  no-gutters d-flex  justify-content-center align-items-center">
+    {% comment %}col 1 {% endcomment %}
+    <div class="  col-12 col-md-8 h-100 d-flex flex-column justify-content-center align-items-center p-4 m-0 border text-white border">
+  <img class='img-fluid rounded-circle w-25' src="{% static 'img/login_illustration2.png' %}"  alt="login-image">
+      
+  
+<h4 class="text-center font-weight-bolder">{% trans "Sign Out" %}</h4>
+
+<p class="text-dark" >{% trans 'Are you sure you want to sign out?' %}</p>
+
+<form class="='w-100" method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button class="btn btn-danger" type="submit "><i class="fa fa-sign-out" aria-hidden="true"></i> {% trans 'Sign Out' %}</button>
+  
+</form>
+
+  </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://use.fontawesome.com/da94531450.js"></script>
+    <script src="https://use.fontawesome.com/6f9b7dd0be.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+{% comment %} animate.css {% endcomment %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>   
+      
+                                                                                                       
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{% load static %}
+
+    {% comment %} bootstrap css {% endcomment %}
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+{% comment %}  {% endcomment %}
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body class="w-100 d-flex flex-column h-100">
+{% comment %} Navigation {% endcomment %}
+
+{% block navigation %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary  align-self-start w-100 mb-5 mb-sm-3">
+  <a class="navbar-brand" href="#">
+ <img class='img-fluid rounded-circle ' src="{% static 'img/login_illustration2.png' %}"  width='50' alt="login-image">
+ <span class="d-none d-sm-inline" >Merill Invest</span>
+  </a>
+  <button class="navbar-toggler d-lg-none border-0 " type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 w-100 d-flex justify-content-end ">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:contact_us' %}">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Terms and Conditions</a>
+      </li>
+
+        
+      {% comment %} drop down {% endcomment %}
+      {% comment %} <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId">
+          <a class="dropdown-item" href="#">Action 1</a>
+          <a class="dropdown-item" href="#">Action 2</a>
+        </div>
+      </li> {% endcomment %}
+    </ul>
+
+    {% comment %} <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> {% endcomment %}
+  </div>
+</nav>
+{% endblock navigation %}
+    {% block body %}
+
+    {% if messages %}
+    <div class="alert alert-light alert-dismissible fade show shadow" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span class="text-danger" aria-hidden="true"><i class="fa fa-window-close fa-2x" aria-hidden="true"></i></span>
+      </button>
+      <strong></strong> 
+      <div class="container d-flex justify-content-center align-items-center p-4">
+      {% comment %} <strong>Messages:</strong> {% endcomment %}
+      <ul>
+        {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <li class="text-success" >{{message}}</li>
+        {% elif message.tags == 'error' %}
+        <li class="text-danger" >{{message}}</li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    </div>
+    
+   
+    
+    {% endif %}
+
+    {% comment %} <div>
+      <strong>Menu:</strong>
+      <ul>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+        {% else %}
+        <li><a href="{% url 'account_login' %}">Sign In</a></li>
+        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    </div> {% endcomment %}
+
+      {% block content %}
+
+  
+    {% endblock %}
+
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+{% comment %} Footer {% endcomment %}
+{% block footer %}
+<footer class="footer bg-primary w-100 align-self-end p-3 ">
+  <div class="container-fluid">
+  <div class="row">
+  
+<div id="social-icons" class=" col-12 col-md-8 d-flex flex-column justify-content-center align-items-center p-2">
+<p class="text-white text-center w-75 m-1">  Connect with us:</p>
+
+<div>
+<a href="#" class="m-2"><img src="{% static 'img/facebook_icon.png' %}" alt="social icon" width = "30" >  </a>
+<a href="#" class="m-2"><img src="{% static 'img/insta_icon.png' %}" alt="social icon" width = "30" >  </a>
+<a href="#" class="m-2"><img src="{% static 'img/twitter_icon.png' %}" alt="social icon" width = "30" >  </a>
+<a href="#" class="m-2"><img src="{% static 'img/linkedin_icon.png' %}" alt="social icon" width = "30" >  </a>
+</div>
+</div>
+
+<div class="footer-nav col-12 col-md-4 d-flex flex-md-column justify-content-center align-items-start"> 
+     
+      <a class="nav-link text-white  mt-0" href="#">About</a>
+      <a class="nav-link text-white  mt-0" href="#">Contact</a>
+      <a class="nav-link text-white  mt-0 text-truncate" href="#">Terms & Condition</a>
+</div>
+{% comment %} <div class=" col-12 d-flex justify-content-center align-items-center mt-3"> 
+<p class="text-white"> <i class="fa fa-copyright text-white" aria-hidden="true"></i> 2022</p>
+</div> {% endcomment %}
+</div>
+</div>
+</footer>
+{% endblock footer %}
+    {% comment %} bootstrap javascript {% endcomment %}
+    <script src="{% static "js/app.js" %}"></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script>
+      $(".alert").alert();
+    </script>
+  </body>
+</html>
