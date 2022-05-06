@@ -1,0 +1,51 @@
+body,
+html {
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    min-width: 100vw;
+    font-family: 'Poppins',
+        sans-serif !important;
+    overflow-x: hidden !important;
+    // pattern .................................
+
+}
+
+a,
+p,
+li,
+ul,
+span,
+button {
+    font-size: 0.7rem !important;
+}
+
+.hero {
+    background-image: url('/static/images/hero-image.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+
+}
+
+.bg-light-primary {
+    background-color: rgb(228, 227, 255);
+}
+
+.lm-btn-wrapper {
+    width: 50%;
+}
+
+footer {
+    background-color: #001E6C !important;
+}
+
+@media screen and (max-width: 567px) {
+    .lm-btn-wrapper {
+        width: 100% !important;
+        padding: 0 !important;
+
+
+    }
+
+}

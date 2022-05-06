@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     # .....................
     # 'crispy_forms'
     'crispy_forms',
-    # 
+    # livereload
+    'livereload',
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # livereload
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'jsbc.urls'
