@@ -38,7 +38,7 @@
   <body class="w-100 d-flex flex-column h-100 opacity-100 bg-light-primary">
 {% block header %}
   <!-- Header......................................................................... -->
-<header class="bg-light">
+<header class="bg-light shadow-lg">
 <!-- Navigation ..................................................................... -->
 
 {% block  navigation %}
@@ -53,10 +53,16 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav me-auto mt-2 mt-lg-0">
         <li class="nav-item ">
-          <a class="nav-link text-primary " href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
+          <a class="nav-link  " href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-primary" href="#">Our Work</a>
+          <a class="nav-link  " href="#">Our Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  " href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  " href="#">Contact</a>
         </li>
         <!-- drop down -->
         <!-- <li class="nav-item dropdown">
@@ -129,8 +135,8 @@
 
 <!-- Footer ................................................................................. -->
 {% block footer %}
-<footer class="footer w-100 p-3 border text-white bg-gradient">
-  Hi footer
+<footer class="footer w-100 p-3  text-white bg-gradient">
+<p class="text-center"><i class="fa fa-copyright" aria-hidden="true"></i> 2022</p>
 </footer>
 {% endblock footer %}
   <!-- bootstrap javascript ................................................................ -->
