@@ -1,3 +1,4 @@
+$secondColor: #E8F9FD;
 body,
 html {
     height: 100vh;
@@ -8,6 +9,7 @@ html {
         sans-serif !important;
     overflow-x: hidden !important;
     // pattern .................................
+    background-image: radial-gradient(rgb(68, 76, 247) 0.5px, rgb(229, 229, 247) 0.5px);
 
 }
 
@@ -20,6 +22,17 @@ button {
     font-size: 0.7rem !important;
 }
 
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
 .hero {
     background-image: url('/static/images/hero-image.jpg') !important;
     background-size: cover;
@@ -29,7 +42,7 @@ button {
 }
 
 .bg-light-primary {
-    background-color: rgb(228, 227, 255);
+    background-color: $secondColor;
 }
 
 .lm-btn-wrapper {
@@ -41,6 +54,13 @@ footer {
     background-color: #001E6C !important;
 }
 
+.footer-link:hover {
+    color: white !important;
+}
+
+.footer-social-link:hover {
+    color: white !important;
+}
 @media screen and (max-width: 567px) {
     .lm-btn-wrapper {
         width: 100% !important;
