@@ -6,9 +6,9 @@
         {% load static %}
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script src="https://use.fontawesome.com/da94531450.js"></script>
       <script src="https://use.fontawesome.com/6f9b7dd0be.js"></script> 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,47 +134,62 @@
 
 <!-- Footer ................................................................................. -->
 {% block footer %}
-<footer class="footer container-fluid w-100 p-3 text-white bg-gradient">
+<footer class="footer w-100 p-3 pt-4  ">
  
     <div class="container">
       <div class="row">
     <!-- footer logo -->
       <div class="col-12 col-sm-3">
-        <div class="bg-light h-100  d-flex justify-content-center align-items-center p-3 rounded">
+        <div class="bg-light rounded-0 h-100  d-flex justify-content-center align-items-center p-3 rounded">
           <img class="" width="100" src="{% static "/images/jsbc_logo.png" %}" alt="logo">
           
         </div>
       </div>
     <!-- site map -->
       <div class="col-12 col-sm-3">
-      <div class="d-flex justify-content-center align-items-center">
+      <div class="d-flex justify-content-start align-items-center align-items-sm-start justify-content-sm-center ">
           <div class="h-100 d-flex flex-column justify-content-center align-items-start p-3 rounded">
           <h6 class="text-white">Site Map</h6>
-          <a class=" text-white-50 m-2 pr-0 footer-link" href="#">About us</a>
-          <a class=" text-white-50 m-2 pr-0 footer-link" href="#">Our work</a>
-          <a class=" text-white-50 m-2 pr-0 footer-link" href="#">Home</a>
-         <a class="b text-white-50 m-2 pr-0 footer-link"  href="#">Contact</a>
+          <a class=" text-white m-2 pr-0 footer-link" href="#">About us</a>
+          <a class=" text-white m-2 pr-0 footer-link" href="#">Our work</a>
+          <a class=" text-white m-2 pr-0 footer-link" href="#">Home</a>
+         <a class="b text-white m-2 pr-0 footer-link"  href="#">Contact</a>
         </div>
       </div>
       </div>
     <!-- social links -->
+   
       <div class="col-12 col-sm-3">
-      <div class="d-flex justify-content-center align-items-center">
+      <div class="d-flex justify-content-start align-items-center align-items-sm-start justify-content-sm-center ">
           <div class="h-100 d-flex flex-column justify-content-center align-items-start p-3 rounded">
           <h6 class="text-white">Social Links</h6>
-          <a class="  footer-social-link" href="#"><i class="fa fa-facebook text-white-50" aria-hidden="true"></i></a>
-          <a class="  footer-social-link" href="#"><i class="fa fa-instagram text-white-50" aria-hidden="true"></i></a>
-          <a class="  footer-social-link" href="#">Home</a>
-          <a class="  footer-social-link"  href="#">Contact</a>
-
+          <a class="  footer-social-link text-white m-2" href="#"> <i class="fa fa-twitter-square " aria-hidden="true"></i> Twitter</p>
+          <a class="  footer-social-link text-white m-2" href="#"> <i class="fa fa-facebook-square " aria-hidden="true"></i> Facebook</p>
+          <a class="  footer-social-link text-white m-2" href="#"><i class="fa fa-instagram  " aria-hidden="true"></i> Instagram</a>
+          <a class="  footer-social-link text-white m-2" href="#"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
         </div>
+      </div>
+      </div>
+    <!-- form section -->
+   
+      <div class="col-12 col-sm-3">
+      <div class="d-flex justify-content-center align-items-center  ">
+          <div class="h-100 d-flex flex-column justify-content-center align-items-start p-3 bg-white rounded-0">
+           <h6 class="text-primary fw-bold"> Suscribe to receive updates.</h6>
+          <form class="form-group">
+            <label class="text-black-50" for="email">E-mail</label>
+            <input type="email" name="email" id="subscribe-email" class="form-control" placeholder="Enter your E-mail" aria-describedby="helpId">
+           <button class="btn btn-primary btn-block mt-2" type="submit">Suscribe <i class="fa fa-rocket" aria-hidden="true"></i> </button>
+        </form>
       </div>
       </div>
       
     </div>
     </div>
- 
-<p class="text-center"><i class="fa fa-copyright" aria-hidden="true"></i> 2022</p>
+ <!-- copy right -->
+<div class="">
+  <p><i class="fa fa-copyright text-whie" aria-hidden="true"></i></p>
+</div>
 </footer>
 {% endblock footer %}
   <!-- bootstrap javascript ................................................................ -->

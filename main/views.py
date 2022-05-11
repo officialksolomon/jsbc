@@ -9,3 +9,13 @@ class HomepageView(View):
     #
     def get(self, request):
         return render(request, 'main/index.html')
+
+
+# Contact page view.
+class ContactView(View):
+    #
+    def get(self, request):
+        return render(request, 'main/contact.html')
+    # 
+    def post(self, request):
+        pass

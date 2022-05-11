@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body,
 html {
   height: 100vh;
@@ -14,12 +15,29 @@ p,
 li,
 ul,
 span,
-button {
+button,
+label {
   font-size: 0.7rem !important;
 }
 
-.btn:not(:disabled):not(.disabled) {
-  cursor: pointer;
+a {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -47,12 +65,12 @@ footer {
   background-color: #001E6C !important;
 }
 
-.footer-link:hover {
-  color: white !important;
+.footer-copyright {
+  background-color: #011444 !important;
 }
 
-.footer-social-link:hover {
-  color: white !important;
+.footer-link:hover::before {
+  content: "» ";
 }
 
 @media screen and (max-width: 567px) {
