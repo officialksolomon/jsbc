@@ -1,4 +1,74 @@
 {% extends "account/base.html" %}
 {% block content %}
-  HI
+<div class="container-fluid w-100 p-0 m-0  mb-3 ">
+  <!-- grid 1 ............................................................... -->
+  <div class="container-fluid w-100 p-0 m-0">
+    <div class="row">
+      <div class="col-12">
+        <div class="contact-hero d-flex justify-content-center align-items-center">
+          <h5 class="text-white fw-bold ">Contact us</h5>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- grid 2 ............................................................... -->
+  <div class="container mt-4">
+    <div class="row bg-light m-2 d-flex justify-content-center align-items-center">
+      
+        <!-- column 1 ................... -->
+      <div class="col-12 col-sm-5 h-100 bg-light p-3  m-2 mb-2 mt-2 border-right">
+        
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <h1  class="contact-heading text-primary fw-bolder m-2">
+            Start a conversation with us...
+          </h1>
+        </div>
+
+        <!-- card 1 -->
+        <div class="bg-white p-3 m-2 shadow" >
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="w-auto m-3"><i class="fa fa-phone fa-3x text-primary " aria-hidden="true"></i></div>
+            <div class="d-flex flex-column justify-content-center align-items-start">
+              <h6 class="fw-bold m-0">Call us on:</h6>
+              <p class="text-primary">+234-813-245-613</p>
+            </div>
+          </div>
+         
+        </div>
+        <!-- card 2 -->
+        <div class="bg-white p-2 m-2 shadow" >
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="w-auto m-3"><i class="fa fa-phone fa-3x text-primary " aria-hidden="true"></i></div>
+            <!-- socials ................................................... -->
+            <div class="w-100 d-flex flex-column justify-content-center align-items-start">
+              <h6 class="fw-bold m-0">Socials:</h6>
+              <div class="w-100 d-flex justify-content-start align-items-center ">
+                <i class="fa fa-twitter  text-primary m-2" aria-hidden="true"></i>
+                <i class="fa fa-facebook  text-primary m-2" aria-hidden="true"></i>
+                <i class="fa fa-instagram  text-primary m-2" aria-hidden="true"></i>
+                <i class="fa fa-youtube  text-primary m-2" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+      <!-- column 2 .................... -->
+      <div class="col-12 col-sm-5 bg-light p-3 m-2 mb-2 mt-2 h-100">
+        <h6 class="fw-bold m-2">Send us a mail:</h6>
+        <form action="" method="post">
+          <div class="form-group">
+            <input type="text" name="name" id="name" class="form-control bg-light-primary m-0 mb-2 mt-2" placeholder="Name...." aria-describedby="helpId">
+            <input type="email" name="email" id="email" class="form-control bg-light-primary  m-0 mb-2 mt-2" placeholder="E-mail..." aria-describedby="helpId">
+            <textarea class="form-control bg-light-primary m-0 mb-2 mt-2" name="message" id="message" cols="30" rows="9" placeholder="Message..."></textarea>
+            <button class="btn btn-block btn-primary m-0 mb-2 mt-2" type="submit">Submit <i class="fa fa-rocket text-white" aria-hidden="true"></i></button>
+         
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+</div>
 {% endblock content %}

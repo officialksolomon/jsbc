@@ -53,8 +53,19 @@ a:active {
   height: 400px;
 }
 
+.contact-hero {
+  background-image: url("/static/images/contact_img.png") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+.contact-hero:hover {
+  opacity: 0.7;
+}
+
 .bg-light-primary {
-  background-color: #E8F9FD;
+  background-image: radial-gradient(#6f76ff 0.5px, #e5e5f7 0.5px);
 }
 
 .lm-btn-wrapper {
@@ -69,7 +80,8 @@ footer {
   background-color: #011444 !important;
 }
 
-.footer-link:hover::before {
+.footer-link,
+a:hover::before {
   content: "» ";
 }
 
