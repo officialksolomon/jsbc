@@ -6,4 +6,5 @@ app_name = 'main'
 urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('about/', TemplateView.as_view(template_name="main/about.html"), name='about'),
+    path('portfolio/', TemplateView.as_view(template_name="main/portfolio.html"), name='portfolio'),
 ]
