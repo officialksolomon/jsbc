@@ -3,7 +3,7 @@ from dataclasses import field
 from pyexpat import model
 from django.forms import ModelForm
 
-from main.models import Contact
+from main.models import Contact, NewsletterSubscription
 
 
 class ContactForm(ModelForm):
@@ -12,7 +12,7 @@ class ContactForm(ModelForm):
         fields = ['name', 'email', "message"]
 
 
-class Newsletter(ModelForm):
+class NewsletterForm(ModelForm):
     class Meta:
-        model = ""
+        model = NewsletterSubscription
         fields = ['email', ]

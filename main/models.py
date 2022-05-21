@@ -18,7 +18,7 @@ class Contact(models.Model):
 
 
 class NewsletterSubscription(models.Model):
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
