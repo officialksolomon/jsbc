@@ -17,7 +17,10 @@ import environ
 env = environ.Env()
 # reading .env file
 environ.Env.read_env()
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,6 +48,11 @@ INSTALLED_APPS = [
     # .....................
     # 'crispy_forms'
     'crispy_forms',
+<<<<<<< HEAD
+=======
+    # livereload
+
+>>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -178,10 +186,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#
-env = environ.Env()
-# reading .env file
-environ.Env.read_env()
+
 
 # Raises django's ImproperlyConfigured exception if PAYSTACK_SECRET_KEY not in os.environ
 PAYSTACK_SECRET_KEY = env("PAYSTACK_SECRET_KEY")
