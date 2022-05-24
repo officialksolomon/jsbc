@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # 'crispy_forms'
     'crispy_forms',
     # livereload
-    'livereload',
+
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
