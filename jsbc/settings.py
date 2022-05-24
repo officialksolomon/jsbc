@@ -13,22 +13,17 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import environ
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
+try:
+    from jsbc.local import *
+except ImportError:
+    print("In production")
+
 #
 env = environ.Env()
 # reading .env file
 environ.Env.read_env()
-<<<<<<< HEAD
 
-=======
->>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
-=======
-
->>>>>>> b5421a3562ee0a85f4a6ef25efaf0ddce45412cc
->>>>>>> eb7406172bec57035afc32df867770b52854e088
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -56,19 +51,8 @@ INSTALLED_APPS = [
     # .....................
     # 'crispy_forms'
     'crispy_forms',
-<<<<<<< HEAD
-=======
     # livereload
-<<<<<<< HEAD
     'livereload',
-=======
-<<<<<<< HEAD
-
->>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
-=======
-    'livereload',
->>>>>>> b5421a3562ee0a85f4a6ef25efaf0ddce45412cc
->>>>>>> eb7406172bec57035afc32df867770b52854e088
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
