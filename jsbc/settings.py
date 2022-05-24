@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import environ
+#
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uhkwistvvopr_-(-ame))kirz=td&^5dh7$12r*t*l&rx0y@yc'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['solomonuche42.pythonanywhere.com']
 
 
 # Application definition
@@ -41,8 +45,6 @@ INSTALLED_APPS = [
     # .....................
     # 'crispy_forms'
     'crispy_forms',
-    # livereload
-    'livereload',
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -102,14 +104,22 @@ WSGI_APPLICATION = 'jsbc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'solomonuche42$jsbc',
+        'USER': 'solomonuche42',
+        'PASSWORD': '0173634324ks@_mysql',
+        'HOST': 'solomonuche42.mysql.pythonanywhere-services.com',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
