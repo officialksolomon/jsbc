@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import environ
+<<<<<<< HEAD
 #
 env = environ.Env()
 # reading .env file
@@ -21,6 +22,9 @@ environ.Env.read_env()
 
 =======
 >>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
+=======
+
+>>>>>>> b5421a3562ee0a85f4a6ef25efaf0ddce45412cc
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['solomonuche42.pythonanywhere.com']
 
@@ -51,8 +55,12 @@ INSTALLED_APPS = [
 <<<<<<< HEAD
 =======
     # livereload
+<<<<<<< HEAD
 
 >>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
+=======
+    'livereload',
+>>>>>>> b5421a3562ee0a85f4a6ef25efaf0ddce45412cc
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -186,7 +194,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+#
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
 
 # Raises django's ImproperlyConfigured exception if PAYSTACK_SECRET_KEY not in os.environ
 PAYSTACK_SECRET_KEY = env("PAYSTACK_SECRET_KEY")
