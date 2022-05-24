@@ -1,0 +1,94 @@
+@charset "UTF-8";
+body,
+html {
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  min-width: 100vw;
+  font-family: 'Poppins', sans-serif !important;
+  overflow-x: hidden !important;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+}
+
+a,
+p,
+li,
+ul,
+span,
+button,
+label {
+  font-size: 0.7rem !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.hero {
+  background-image: url("/static/images/hero-image.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+.contact-hero {
+  background-image: url("/static/images/contact_img.png") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+.contact-hero:hover {
+  opacity: 0.7;
+}
+
+.bg-light-primary {
+  background-image: radial-gradient(#6f5fff 0.5px, #e5e5f7 0.5px);
+}
+
+.lm-btn-wrapper {
+  width: 50%;
+}
+
+footer {
+  background-color: #001E6C !important;
+}
+
+.footer-copyright {
+  background-color: #011444 !important;
+}
+
+.footer-link,
+a:hover::before {
+  content: "» ";
+}
+
+@media screen and (max-width: 567px) {
+  .lm-btn-wrapper {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -13,7 +13,22 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import environ
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+#
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
+=======
+
+>>>>>>> b5421a3562ee0a85f4a6ef25efaf0ddce45412cc
+>>>>>>> eb7406172bec57035afc32df867770b52854e088
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,12 +37,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uhkwistvvopr_-(-ame))kirz=td&^5dh7$12r*t*l&rx0y@yc'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['solomonuche42.pythonanywhere.com']
 
 
 # Application definition
@@ -41,8 +56,19 @@ INSTALLED_APPS = [
     # .....................
     # 'crispy_forms'
     'crispy_forms',
+<<<<<<< HEAD
+=======
     # livereload
+<<<<<<< HEAD
     'livereload',
+=======
+<<<<<<< HEAD
+
+>>>>>>> 1598e265324cb5b88af4c13e58ea0e1b21abc34a
+=======
+    'livereload',
+>>>>>>> b5421a3562ee0a85f4a6ef25efaf0ddce45412cc
+>>>>>>> eb7406172bec57035afc32df867770b52854e088
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -102,14 +128,22 @@ WSGI_APPLICATION = 'jsbc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'solomonuche42$jsbc',
+        'USER': 'solomonuche42',
+        'PASSWORD': '0173634324ks@_mysql',
+        'HOST': 'solomonuche42.mysql.pythonanywhere-services.com',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
