@@ -1,13 +1,11 @@
-from time import sleep
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.models import User
-from pip import main
+from django.db import IntegrityError
 from main.html_response import contact_success, contact_failure, newsletter_success, newsletter_failure
-from django.core.mail import send_mail
+
 from main.forms import ContactForm, NewsletterForm
-from jsbc.settings import EMAIL_HOST_USER
 
 # Create your views here.
 
@@ -31,10 +29,6 @@ class ContactView(View):
             form.save()
             context = {'status': 'success',
                        'message': f"Dear {form.cleaned_data['name']}, we have successfully received your message."}
-            # send mail
-
-            send_mail('Hi Solomon', "JSBC SUPPORT",
-                      EMAIL_HOST_USER, ['solomonuche42@gmail.com'])
             return render(request, 'main/partials/contact_response.html', context)
         else:
             context = {'status': 'danger',
