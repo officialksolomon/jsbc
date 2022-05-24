@@ -1,0 +1,6 @@
+{% csrf_token %}
+ <p id="newsletter-response" class="textt-center text-{{status}} newsletter-response animate__animated animate__fadeIn">{{message}}</p>
+<label class="text-black-50" for="email">E-mail</label>
+<input type="email" name="email" id="subscribe-email" class="form-control" placeholder="Enter your E-mail" aria-describedby="helpId">
+<button 
+class="btn btn-primary btn-block mt-2" type="submit">Suscribe <i class="fa fa-rocket" aria-hidden="true"></i> </button>

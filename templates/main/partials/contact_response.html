@@ -1,0 +1,15 @@
+        {% csrf_token %}
+        <p id="server-response" class="text-center text-{{status}} server-response">{{message}}</p>
+          <div class="form-group">
+            {% if request.user.is_authenticated %}
+              <input type="text" name="name" id="name" value="{{request.user.username}}"   required  class="form-control  m-0 mb-2 mt-2" placeholder="Name...." aria-describedby="helpId">
+            <input type="email" name="email" id="email" value="{{request.user.email}}"   required  class="form-control   m-0 mb-2 mt-2" placeholder="E-mail..." aria-describedby="helpId">
+            {% else %}
+            <input type="text" name="name" id="name"  required  class="form-control  m-0 mb-2 mt-2" placeholder="Name...." aria-describedby="helpId">
+            <input type="email" name="email" id="email"  required class="form-control   m-0 mb-2 mt-2" placeholder="E-mail..." aria-describedby="helpId">
+            {% endif %}
+            
+            <textarea class="form-control  m-0 mb-2 mt-2" required name="message" id="message" cols="30" rows="9" placeholder="Message..."></textarea>
+            <button class="btn btn-block btn-primary m-0 mb-2 mt-2" type="submit">Submit <i class="fa fa-rocket text-white" aria-hidden="true"></i></button>
+         
+          </div>

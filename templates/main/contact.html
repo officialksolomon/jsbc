@@ -1,6 +1,6 @@
 {% extends "account/base.html" %}
 {% block content %}
-<div class="container-fluid w-100 p-0 m-0  mb-3 ">
+<div class="container-fluid w-100 p-0 m-0  mb-3 first ">
   <!-- grid 1 ............................................................... -->
   <div class="container-fluid w-100 p-0 m-0">
     <div class="row">
@@ -57,13 +57,12 @@
       <!-- column 2 .................... -->
       <div class="col-12 col-sm-5 bg-light p-3 m-2 mb-2 mt-2 h-100">
         <h6 class="fw-bold m-2">Send us a mail:</h6>
-        <div id="server-response" class="server-response"></div>
         <form
-              hx-post ="{% url 'main:contact' %}"
-              hx-target ="#server-response"
-              hx-swap='innerHtml'
-         method="POST">
-          {% csrf_token %}
+        hx-post ="{% url 'main:contact' %}"
+        hx-swap='innerHtml'
+        method="POST" class="contact-form">
+        {% csrf_token %}
+        <div id="server-response" class="server-response"></div>
           <div class="form-group">
             {% if request.user.is_authenticated %}
               <input type="text" name="name" id="name" value="{{request.user.username}}"   required  class="form-control  m-0 mb-2 mt-2" placeholder="Name...." aria-describedby="helpId">
@@ -83,4 +82,14 @@
     </div>
   </div>
 </div>
+<script>
+const form = document.querySelector('.contact-form')
+const element = document.querySelector('.first')
+const body = document.body
+form.addEventListener('submit', () => {
+  body.classList.toggle('animate__backInUp')
+  element.scrollIntoView()
+
+})
+</script>
 {% endblock content %}

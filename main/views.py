@@ -27,17 +27,29 @@ class ContactView(View):
         form = ContactForm(request.POST or None)
         if form.is_valid():
             form.save()
-            return HttpResponse(contact_success)
+            context = {'status': 'success',
+                       'message': f"Dear {form.cleaned_data['name']}, we have successfully received your message."}
+            return render(request, 'main/partials/contact_response.html', context)
         else:
-            return HttpResponse(contact_failure)
+            context = {'status': 'danger',
+                       'message': 'Sorry we didnt receive your message please try again'}
+            return render(request, 'main/partials/contact_response.html', context)
+
 
 
 class NewsletterView(View):
+    def get(self, email):
+        pass
     def post(self, request):
         form = NewsletterForm(request.POST or None)
-
         if form.is_valid():
             form.save()
-            return HttpResponse(newsletter_success)
+            context = {'status': 'success',
+                       'message': f"{form.cleaned_data['email']},have been successfully suscribed"}
+            return render(request, 'main/partials/newsletter_response.html', context)
         else:
-            return HttpResponse(newsletter_failure)
+            context = {'status': 'danger',
+                       'message': f"Failed to suscribe, please try again or try with a different E-mail."}
+            return render(request, 'main/partials/newsletter_response.html', context)
+
+
