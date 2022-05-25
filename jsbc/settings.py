@@ -13,10 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import environ
-try:
-    from jsbc.local import *
-except ImportError:
-    print("In production")
+
 
 #
 env = environ.Env()
@@ -34,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['solomonuche42.pythonanywhere.com']
 
@@ -206,3 +203,18 @@ EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EL_PASSWORD')
+
+# production tweaks
+if DEBUG:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    SECRET_KEY = '=n&z*z^x6tv8iz)o=-(607^o+1&rg%f7&1j+7m-v*_!!15+y1#'
+
+    ALLOWED_HOSTS = ['127.0.0.1']
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
