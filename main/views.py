@@ -4,8 +4,9 @@ from django.views import View
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from main.html_response import contact_success, contact_failure, newsletter_success, newsletter_failure
-
 from main.forms import ContactForm, NewsletterForm
+import threading
+
 
 # Create your views here.
 
@@ -29,6 +30,9 @@ class ContactView(View):
             form.save()
             context = {'status': 'success',
                        'message': f"Dear {form.cleaned_data['name']}, we have successfully received your message."}
+            # speedup I/O bounding email sending with threading
+            email_thread = threading.Thread(target=form.send_mail)
+            email_thread.start()
             return render(request, 'main/partials/contact_response.html', context)
         else:
             context = {'status': 'danger',
@@ -46,6 +50,8 @@ class NewsletterView(View):
             form.save()
             context = {'status': 'success',
                        'message': f"{form.cleaned_data['email']},have been successfully suscribed"}
+            email_thread = threading.Thread(target=form.send_mail)
+            email_thread.start()
             return render(request, 'main/partials/newsletter_response.html', context)
         else:
             context = {'status': 'danger',
