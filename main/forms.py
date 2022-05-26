@@ -21,7 +21,7 @@ class ContactForm(ModelForm):
                   EMAIL_HOST_USER, recipient_list, fail_silently=True)
         # user
         send_mail(user_subject, user_message, EMAIL_HOST_USER, [user_email], fail_silently=True)
-        logging.info("ContactForm: Emails successfully sent.")
+
 
     class Meta:
         model = Contact
@@ -34,8 +34,8 @@ class NewsletterForm(ModelForm):
         admin_message = f"New User with E-main address {self.cleaned_data['email']} susbcribed to our newsletter."
         recipient_list = ['ddctech.org@gmail.com', EMAIL_HOST_USER]
         # admin
-        send_mail(admin_subject, admin_message,EMAIL_HOST_USER, recipient_list, fail_silently=True)
-        logging.info("NewsletterForm: Emails successfully sent.")
+        send_mail(admin_subject, admin_message, EMAIL_HOST_USER,
+                  recipient_list, fail_silently=True)
 
     class Meta:
         model = NewsletterSubscription
