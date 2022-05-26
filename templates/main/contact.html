@@ -17,7 +17,7 @@
     <div class="row bg-light m-2 d-flex justify-content-center align-items-center">
       
         <!-- column 1 ................... -->
-      <div class="col-12 col-sm-5 h-100 bg-light p-3  m-2 mb-2 mt-2 border-right">
+      <div class="col-12 col-lg-5 h-100 bg-light p-3  m-2 mb-2 mt-2 border-right">
         
         <div class="d-flex flex-column justify-content-center align-items-center">
           <h1  class="contact-heading text-primary fw-bolder m-2">
@@ -55,7 +55,7 @@
         </div>
       </div>
       <!-- column 2 .................... -->
-      <div class="col-12 col-sm-5 bg-light p-3 m-2 mb-2 mt-2 h-100">
+      <div class="form-container animate__animated animate__backInUp col-12 col-lg-5 bg-light p-3 m-2 mb-2 mt-2 h-100">
         <h4 class="fw-bold m-2">Send us a mail:</h4>
         <form
         hx-post ="{% url 'main:contact' %}"
@@ -83,12 +83,20 @@
   </div>
 </div>
 <script>
-const form = document.querySelector('.contact-form')
-const element = document.querySelector('.first')
+const formContainer = document.querySelector('.form-container')
+const firstElement = document.querySelector('.first')
 const body = document.body
-form.addEventListener('submit', () => {
-  body.classList.toggle('animate__backInUp')
-  element.scrollIntoView()
+formContainer.addEventListener('submit', () => {
+  
+  if(window.screen.width <=  900 ){
+    formContainer.classList.toggle('animate__backInUp')
+    formContainer.scrollIntoView()
+  }
+  else{
+    body.classList.toggle('animate__backInUp')
+    firstElement.scrollIntoView()
+  
+  }
 
 })
 </script>
