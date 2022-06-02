@@ -32,7 +32,7 @@ class NewsletterForm(ModelForm):
     def send_mail(self):
         admin_subject = "Newsletter Subcription Notification"
         admin_message = f"New User with E-main address {self.cleaned_data['email']} susbcribed to our newsletter."
-        recipient_list = ['ddctech.org@gmail.com', EMAIL_HOST_USER]
+        recipient_list = ['ddctech.org@gmail.com']
         # admin
         send_mail(admin_subject, admin_message, EMAIL_HOST_USER,
                   recipient_list, fail_silently=True)
