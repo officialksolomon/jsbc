@@ -31,10 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['solomonuche42.pythonanywhere.com']
-
 
 # Application definition
 
@@ -205,7 +204,8 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EL_PASSWORD')
 
 # production tweaks
-if DEBUG:
+if os.getenv('DEBUG') == 'True':
+    DEBUG = True
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     SECRET_KEY = '=n&z*z^x6tv8iz)o=-(607^o+1&rg%f7&1j+7m-v*_!!15+y1#'
@@ -218,3 +218,5 @@ if DEBUG:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+else:
+    DEBUG = False
