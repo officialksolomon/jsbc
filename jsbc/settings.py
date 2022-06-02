@@ -210,8 +210,6 @@ if os.getenv('DEBUG') == 'True':
 
     SECRET_KEY = '=n&z*z^x6tv8iz)o=-(607^o+1&rg%f7&1j+7m-v*_!!15+y1#'
 
-    ALLOWED_HOSTS = ['127.0.0.1']
-
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
