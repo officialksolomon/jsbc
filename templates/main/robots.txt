@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://www.jsbc.com.ng/sitemap.xml
