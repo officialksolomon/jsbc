@@ -3,7 +3,15 @@
 <html>
   <head>
 
-        {% load static %}
+      {% load static %}
+      {% comment %} open graph {% endcomment %}
+      <meta property="og:image" content="http://{{ request.get_host }}/{% static 'images/jsbc_logo_og.png' %}">
+      <meta property="og:image:secure_url" content="https://{{ request.get_host }}/{% static 'images/jsbc_logo_og.png' %}">
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="1080">
+      <meta property="og:image:height" content="607">
+      {% comment %} end  {% endcomment %}
+    
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
