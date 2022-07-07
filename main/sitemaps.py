@@ -3,7 +3,7 @@ from django.urls import reverse
 
 
 class StaticSitemap(Sitemap):
-    changefreq = "monthly"
+    changefreq = "always"
     priority = 0.8
     protocol = 'https'
 
