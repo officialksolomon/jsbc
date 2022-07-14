@@ -8,7 +8,7 @@ from jsbc.settings import EMAIL_HOST_USER, DEFAULT_EMAIL_USERNAME
 import logging
 
 
-class Email(ModelForm):
+class Email:
     def visit_email():
         subject = "Contact form Notification"
         message = "Someone just visited JSBC"
