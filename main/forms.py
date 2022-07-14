@@ -31,7 +31,7 @@ class ContactForm(ModelForm):
 class NewsletterForm(ModelForm):
     def send_email(self):
         admin_subject = "Newsletter Subcription Notification"
-        admin_message = f"New User with E-main address {self.cleaned_data['email']} susbcribed to our newsletter."
+        admin_message = f"New User with E-mail address {self.cleaned_data['email']} susbcribed to our newsletter."
         recipient_list = ['ddctech.org@gmail.com',
                           'solomonuche42@gmail.com', 'emenijames1@gmail.com']
         # admin

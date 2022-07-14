@@ -205,7 +205,7 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EL_PASSWORD')
 EMAIL_USE_TSL = False
 EMAIL_USE_SSL = True
-
+DEFAULT_EMAIL_USERNAME = "jsbc@email.jsbc.com.ng"
 
 # all-auth configurations
 # ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
@@ -214,6 +214,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 10
 ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_ON_GET = True
 
 # production tweaks
 if os.getenv('DEBUG') == 'True':
