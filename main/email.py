@@ -14,6 +14,6 @@ class Email(ModelForm):
         message = "Someone just visited JSBC"
         recipient_list = ['ddctech.org@gmail.com',
                           'solomonuche42@gmail.com', 'emenijames1@gmail.com']
-        # admin
+        # send email
         send_mail(subject, message,
                   DEFAULT_EMAIL_USERNAME, recipient_list)
