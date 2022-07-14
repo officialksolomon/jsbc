@@ -9,11 +9,10 @@ import logging
 
 
 class Email(ModelForm):
-    def visit_email():
+    def new_visit_email():
         subject = "Contact form Notification"
         message = "Someone just visited JSBC"
-        recipient_list = ['ddctech.org@gmail.com',
-                          'solomonuche42@gmail.com', 'emenijames1@gmail.com']
+        recipient_list = ['ddctech.org@gmail.com', 'emenijames1@gmail.com']
         # send email
         send_mail(subject, message,
                   DEFAULT_EMAIL_USERNAME, recipient_list)

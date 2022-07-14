@@ -216,6 +216,9 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_ON_GET = True
 
+# session configs
+SESSION_COOKIE_AGE = 3000000000
+
 # production tweaks
 if os.getenv('DEBUG') == 'True':
     DEBUG = True

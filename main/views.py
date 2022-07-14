@@ -5,15 +5,25 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from main.html_response import contact_success, contact_failure, newsletter_success, newsletter_failure
 from main.forms import ContactForm, NewsletterForm
+from main.email import Email
 import threading
 
 
 # Create your views here.
 
+def new_user_notification(request):
+    """Notify admins when a new user visit the hompage"""
+    request.session['is_new_user'] = True
+    if request.session['is_new_user']:
+        print("New User")
+        email_thread = threading.Thread(target=Email.new_visit_email)
+        email_thread.start()
+    request.session['is_new_user'] == False
+
 
 class HomepageView(View):
-    #
     def get(self, request):
+        new_user_notification(request)
         return render(request, 'main/index.html')
 
 
