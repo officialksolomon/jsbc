@@ -110,10 +110,10 @@
        {% comment %}  RC NUMBER {% endcomment %}
       <div class="mx-2 p-2"><h5 class="text-primary fw-bold">RC 300010</h5></div>
        {% comment %}  Account {% endcomment %}
-       {% comment %} <div class="account flex">
-        <button button class="btn btn-sm btn-primary">Register</button>
-        <button button class="btn btn-sm btn-outline-primary">Login</button>
-      </div>  {% endcomment %}
+      <div class="account flex">
+        <a button class="btn btn-sm btn-primary" href="{% url 'account_signup' %}">Register</a>
+        <a button class="btn btn-sm btn-outline-primary" href="{% url 'account_login' %}">Login</a>
+      </div>  
     </div>
   </div>
 </nav>

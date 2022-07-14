@@ -10,16 +10,6 @@ html {
   background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
 }
 
-a,
-p,
-li,
-ul,
-span,
-button,
-label {
-  font-size: 0.7rem !important;
-}
-
 a {
   text-decoration: none;
 }
@@ -73,7 +63,7 @@ a:active {
 }
 
 footer {
-  background-color: #001E6C !important;
+  background-color: #0038FF !important;
 }
 
 .footer-copyright {
@@ -83,6 +73,10 @@ footer {
 .footer-link,
 a:hover::before {
   content: "» ";
+}
+
+#div_id_email > label {
+  color: black !important;
 }
 
 @media screen and (max-width: 567px) {

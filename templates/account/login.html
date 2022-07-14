@@ -14,19 +14,19 @@
 
 {% block content %}
 
-<div class="container h-100 p-3">
+<div class="container h-100 p-3 my-5 ">
   <div class="row h-100  no-gutters d-flex  justify-content-center align-items-center">
     
     {% comment %}col 1 {% endcomment %}
     <div class="welcome-message bg-primary col-12 col-md-4 h-100 d-none  d-md-flex flex-column justify-content-center align-items-center p-4 m-0 border text-white">
-  <img class='img-fluid rounded-circle w-75' src="{% static 'img/login_illustration2.png' %}"  alt="login-image">
+  <img class='img-fluid rounded-circle w-75' src="{% static 'images/welcome.png' %}"  alt="login-image">
+   <img class='mobile-form-logo d-sm-none  img-fluid rounded-circle w-25 position-absolute top-0 ' src="{% static 'images/welcome.png' %}"  alt="login-image">
   <h4 class="mt-2 text-center font-weight-bolder mb-0">Welcome Back</h4>  
   <p class="text-center">Welcome, we are glad you decided to join us. Enjoy awesome services with ease... </p>
     </div>
     {% comment %} col 2 {% endcomment %}
-    <div class="login-container h-100 col-12 col-md-6  d-flex flex-column justify-content-center align-items-center p-4  bg-light-blue border rounded-right position-relative">
+<div class="login-container col-12  h-100  col-md-6  d-flex flex-column justify-content-center align-items-center p-4  bg-white position-relative">
       
- <img class='mobile-form-logo d-sm-none  img-fluid rounded-circle w-25 position-absolute' src="{% static 'img/login_illustration2.png' %}"  alt="login-image">
 <h4 class="text-center font-weight-bolder">{% trans "Sign In" %}</h4>
 
 {% get_providers as socialaccount_providers %}

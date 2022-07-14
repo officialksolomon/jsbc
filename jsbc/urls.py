@@ -26,5 +26,6 @@ urlpatterns = [
     path('', include('main.urls')),
     path("robots.txt", TemplateView.as_view(
         template_name="main/robots.txt", content_type="text/plain")),
+    path('accounts/', include('allauth.urls')),
 
 ]
