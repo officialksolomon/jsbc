@@ -213,7 +213,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 10
 ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = 'main:index'
+LOGIN_REDIRECT_URL = 'home'
 
 # production tweaks
 if os.getenv('DEBUG') == 'True':
