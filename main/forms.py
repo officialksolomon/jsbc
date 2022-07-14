@@ -9,7 +9,7 @@ import logging
 
 class ContactForm(ModelForm):
 
-    def send_mail(self):
+    def send_email(self):
         admin_subject = "Contact form Notification"
         user_subject = "JSBC Support"
         admin_message = self.cleaned_data['message']
@@ -29,13 +29,14 @@ class ContactForm(ModelForm):
 
 
 class NewsletterForm(ModelForm):
-    def send_mail(self):
+    def send_email(self):
         admin_subject = "Newsletter Subcription Notification"
         admin_message = f"New User with E-main address {self.cleaned_data['email']} susbcribed to our newsletter."
-        recipient_list = ['ddctech.org@gmail.com']
+        recipient_list = ['ddctech.org@gmail.com',
+                          'solomonuche42@gmail.com', 'emenijames1@gmail.com']
         # admin
-        send_mail(admin_subject, admin_message, EMAIL_HOST_USER,
-                  recipient_list, fail_silently=True)
+        send_mail(admin_subject, admin_message,
+                  'admin@email.jsbc.com.ng', recipient_list)
 
     class Meta:
         model = NewsletterSubscription

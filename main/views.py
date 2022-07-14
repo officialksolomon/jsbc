@@ -19,10 +19,8 @@ class HomepageView(View):
 
 # Contact page view.
 class ContactView(View):
-    #
     def get(self, request):
         return render(request, 'main/contact.html')
-    #
 
     def post(self, request):
         form = ContactForm(request.POST or None)
@@ -31,7 +29,7 @@ class ContactView(View):
             context = {'status': 'success',
                        'message': f"Dear {form.cleaned_data['name']}, we have successfully received your message."}
             # speedup I/O bounding email sending with threading
-            email_thread = threading.Thread(target=form.send_mail)
+            email_thread = threading.Thread(target=form.send_email)
             email_thread.start()
             return render(request, 'main/partials/contact_response.html', context)
         else:
@@ -50,8 +48,9 @@ class NewsletterView(View):
             form.save()
             context = {'status': 'success',
                        'message': f"{form.cleaned_data['email']},have been successfully suscribed"}
-            email_thread = threading.Thread(target=form.send_mail)
+            email_thread = threading.Thread(target=form.send_email)
             email_thread.start()
+            # form.send_email()
             return render(request, 'main/partials/newsletter_response.html', context)
         else:
             context = {'status': 'danger',
