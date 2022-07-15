@@ -20,7 +20,7 @@ ul,
 span,
 button,
 label {
-    font-size: 0.7rem !important;
+    font-size: 0.9rem !important;
 }
 
 a {
@@ -90,7 +90,7 @@ a:active {
 
 
 footer {
-    background-color: #001E6C !important;
+    background-color: #0038FF !important;
 }
 .footer-copyright {
     background-color: #011444 !important;
@@ -101,6 +101,9 @@ a:hover::before {
     content: "» "
 }
 
+#div_id_email>label {
+    color: black !important;
+}
 
 @media screen and (max-width: 567px) {
     .lm-btn-wrapper {
