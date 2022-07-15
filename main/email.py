@@ -12,7 +12,7 @@ class Email(ModelForm):
     def new_visit_email():
         subject = "New Visitor Notification"
         message = "Someone just visited JSBC"
-        recipient_list = ['ddctech.org@gmail.com']
+        recipient_list = ['ddctech.org@gmail.com', 'emenijames1@gmail.com']
         # 'emenijames1@gmail.com'
         # send email
         send_mail(subject, message,
