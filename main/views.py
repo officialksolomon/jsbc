@@ -13,11 +13,10 @@ import threading
 
 def new_user_notification(request):
     """Notify admins when a new user visit the hompage"""
-    # if 'is_new_user' not in request.session:
-    #     email_thread = threading.Thread(target=Email.new_visit_email)
-    #     email_thread.start()
-    # request.session['is_new_user'] == False
-
+    if 'is_new_user' not in request.session:
+        email_thread = threading.Thread(target=Email.new_visit_email)
+        email_thread.start()
+    request.session['is_new_user'] = False
 
 class HomepageView(View):
     def get(self, request):
