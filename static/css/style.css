@@ -10,16 +10,6 @@ html {
   background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
 }
 
-a,
-p,
-li,
-ul,
-span,
-button,
-label {
-  font-size: 0.9rem !important;
-}
-
 a {
   text-decoration: none;
 }
