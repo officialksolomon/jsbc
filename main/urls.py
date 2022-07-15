@@ -15,6 +15,7 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('about/', TemplateView.as_view(template_name="main/about.html"), name='about'),
     path('portfolio/', TemplateView.as_view(template_name="main/portfolio.html"), name='portfolio'),
+    path('terms/', TemplateView.as_view(template_name="main/terms.html"), name='terms'),
     path('newsletter/', NewsletterView.as_view(),
          name='newsletter'),
     #
