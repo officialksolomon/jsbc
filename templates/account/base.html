@@ -14,6 +14,8 @@
     
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      {% comment %} loading indicator css {% endcomment %}
+     <link rel="stylesheet" href="{% static 'css/loader.css' %}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       {% comment %} font awesome {% endcomment %}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -50,28 +52,29 @@
     {% block extra_head %}
     {% endblock %}
      {% comment %}  fonts ....................................................................... {% endcomment %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
      {% comment %}  htmx ........................................................................ {% endcomment %}
     <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script>
-     <script>
-          document.body.addEventListener('configRequest.htmx', (event) => {
-    event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
-})
-        </script>
+    
   </head>
 
    {% comment %}  body  ........................................................................ {% endcomment %}
-  <body class="w-100 d-flex flex-column h-100 opacity-100 animate__animated animate__backInUp ">
+  <body class="w-100 position-relative d-flex flex-column h-100 opacity-100 animate__animated animate__backInUp ">
 {% block header %}
+<div class="container-fluid loader-wrapper bg-white bg-opacity-75 h-100 position-absolute">
+  <span class="loader position-absolute top-50 start-50"></span>
+</div>
+{% comment %} loading indicator {% endcomment %}
+
    {% comment %}  Header......................................................................... {% endcomment %}
 <header class="bg-light shadow-sm">
  {% comment %}  Navigation ..................................................................... {% endcomment %}
 
 {% block  navigation %}
   <nav class="container  navbar navbar-expand-md navbar-light bg-light">
-    <div class="container">
+    <div class="container ">
     <a class="navbar-brand text-primary fw-bolder" href="{% url 'home' %}"><img class="" width="100" src="{% static "/images/jsbc_logo.png" %}" alt=""></a>
      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -261,6 +264,12 @@
   {% comment %} <script src="{% static "js/app.js" %}"></script> {% endcomment %}
 {% comment %} base.js General javascript file {% endcomment %}
 <script src="{% static 'js/base.js' %}"></script>
+{% comment %} htmx script {% endcomment %}
+ <script defer>
+    document.body.addEventListener('configRequest.htmx', (event) => {
+    event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+})
+</script>
   </body>
 </html>
 

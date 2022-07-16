@@ -7,3 +7,13 @@ const closeAlerts = () => {
     }, 5000);
 };
 document.addEventListener('DOMContentLoaded', closeAlerts);
+
+const closeLoader = () => {
+    const loaderWrapper = document.querySelector('.loader-wrapper');
+    window.addEventListener('load', () => {
+        loaderWrapper.classList.add('d-none');
+
+    });
+};
+
+closeLoader();
