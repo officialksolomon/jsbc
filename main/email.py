@@ -4,7 +4,7 @@ from pyexpat import model
 from django.forms import ModelForm
 from django.core.mail import send_mail
 from main.models import Contact, NewsletterSubscription
-from jsbc.settings import EMAIL_HOST_USER, DEFAULT_EMAIL_USERNAME
+from jsbc.settings import DEFAULT_FROM_EMAIL
 import logging
 
 
@@ -16,4 +16,4 @@ class Email(ModelForm):
         # 'emenijames1@gmail.com'
         # send email
         send_mail(subject, message,
-                  DEFAULT_EMAIL_USERNAME, recipient_list)
+                  DEFAULT_FROM_EMAIL, recipient_list)

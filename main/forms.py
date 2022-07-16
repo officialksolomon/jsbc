@@ -1,11 +1,34 @@
 
-from dataclasses import field
-from pyexpat import model
+
+from django import forms
 from django.forms import ModelForm
 from django.core.mail import send_mail
-from main.models import Contact, NewsletterSubscription
-from jsbc.settings import EMAIL_HOST_USER
-import logging
+from main.models import Contact, NewsletterSubscription, Profile
+from jsbc.settings import EMAIL_HOST_USER, DEFAULT_FROM_EMAIL
+from allauth.account.forms import SignupForm
+from django import forms
+
+
+class CustomSignupForm(SignupForm):
+    terms_consent = forms.BooleanField(
+        required=True, initial=False,  label='I have read and consent to the terms and conditions?')
+    field_order = ['username', 'email',
+                   'password1', 'password2', 'terms_consent', ]
+
+    def save(self, request):
+        # Ensure you call the parent class's save.
+        user = super(CustomSignupForm, self).save(request)
+
+        # create profile and save consent
+        Profile.objects.create(user=user, terms_consent=True)
+
+        # You must return the original result.
+        return user
+
+
+field_order = ['username', 'email',
+               'password1', 'password2', 'terms_consent', ]
+
 
 class ContactForm(ModelForm):
 
@@ -32,11 +55,10 @@ class NewsletterForm(ModelForm):
     def send_email(self):
         admin_subject = "Newsletter Subcription Notification"
         admin_message = f"New User with E-mail address {self.cleaned_data['email']} susbcribed to our newsletter."
-        recipient_list = ['ddctech.org@gmail.com',
-                          'solomonuche42@gmail.com', 'emenijames1@gmail.com']
+        recipient_list = ['ddctech.org@gmail.com']
         # admin
-        send_mail(admin_subject, admin_message,
-                  'admin@email.jsbc.com.ng', recipient_list)
+        send_mail(admin_subject,  admin_message,
+                  DEFAULT_FROM_EMAIL, recipient_list)
 
     class Meta:
         model = NewsletterSubscription

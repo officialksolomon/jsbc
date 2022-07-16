@@ -22,6 +22,7 @@
   {% csrf_token %}
   <!-- {{ form.as_p }} -->
   {{ form | crispy }}
+  <p class="ml-4 text-primary ">Read the Terms & Conditions here <a class="btn btn-outline-primary btn-sm" href="{% url 'main:terms' %}">Read</a>.</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}

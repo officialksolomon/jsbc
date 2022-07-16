@@ -206,6 +206,7 @@ EMAIL_HOST_PASSWORD = env('EL_PASSWORD')
 EMAIL_USE_TSL = False
 EMAIL_USE_SSL = True
 DEFAULT_EMAIL_USERNAME = "jsbc@email.jsbc.com.ng"
+DEFAULT_FROM_EMAIL = 'JSBC <jsbc@email.jsbc.com.ng>'
 
 # all-auth configurations
 # ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
@@ -215,7 +216,16 @@ ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 10
 ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_ON_GET = True
-
+#allauth email configs
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# allauth form setting
+ACCOUNT_FORMS = {
+    'signup': 'main.forms.CustomSignupForm',
+}
 # session configs
 SESSION_COOKIE_AGE = 3000000000
 

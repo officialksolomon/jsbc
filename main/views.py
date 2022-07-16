@@ -1,9 +1,9 @@
-from django.http import HttpResponse
+
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.models import User
-from django.db import IntegrityError
-from main.html_response import contact_success, contact_failure, newsletter_success, newsletter_failure
+
+from jsbc.settings import DEFAULT_FROM_EMAIL
 from main.forms import ContactForm, NewsletterForm
 from main.email import Email
 import threading
