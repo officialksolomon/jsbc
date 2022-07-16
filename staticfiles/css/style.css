@@ -5,7 +5,7 @@ html {
   min-height: 100vh;
   width: 100vw;
   min-width: 100vw;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden !important;
   background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
 }
@@ -17,7 +17,7 @@ ul,
 span,
 button,
 label {
-  font-size: 0.9rem !important;
+  font-size: 0.8rem !important;
 }
 
 a {
