@@ -40,6 +40,7 @@ ALLOWED_HOSTS = ['solomonuche42.pythonanywhere.com',
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
+    'trade.apps.TradeConfig',
     # all_auth
     'allauth',
     'allauth.account',
