@@ -7,4 +7,4 @@ from django.views import View
 
 class TradeIndex(View):
     def get(self, request):
-        return HttpResponse('Trade app is working')
+        return render(request, 'trade/index.html')
