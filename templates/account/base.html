@@ -49,8 +49,7 @@
         <link href="{% static "css/styles.css" %}" rel="stylesheet" />
  {% comment %}  title........................................ {% endcomment %}
     <title>{% block head_title %}JSBC{% endblock %}</title>
-    {% block extra_head %}
-    {% endblock %}
+    {% block extra_head %}{% endblock extra_head %}
      {% comment %}  fonts ....................................................................... {% endcomment %}
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,0 +1,39 @@
+a:hover::before {
+  content: "";
+}
+
+li a {
+  color: white !important;
+  font-size: 1.0rem !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+a span {
+  font-size: 0.9rem !important;
+}
+
+li a:hover {
+  background-color: white !important;
+  color: #0d6efd !important;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 567px) {
+  a span::before {
+    content: " ";
+  }
+}
+
+@media screen and (max-width: 567px) {
+  a span {
+    font-size: 0.6rem !important;
+  }
+}
+/*# sourceMappingURL=trade-styles.css.map */
