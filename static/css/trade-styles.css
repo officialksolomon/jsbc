@@ -25,6 +25,17 @@ li a:hover {
   border-radius: 5px;
 }
 
+li.welcome a:hover {
+  background-color: #0d6efd !important;
+  color: white !important;
+  border-radius: 0;
+}
+
+li.active {
+  border: rgba(255, 255, 255, 0.164) 1px solid;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 567px) {
   a span::before {
     content: " ";
