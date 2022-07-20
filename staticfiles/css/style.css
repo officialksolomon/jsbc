@@ -2,9 +2,7 @@
 body,
 html {
   height: 100vh;
-  min-height: 100vh;
   width: 100vw;
-  min-width: 100vw;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden !important;
   background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);

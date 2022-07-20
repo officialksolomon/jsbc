@@ -1,3 +1,4 @@
+// closes alerts on all pages after a giving timeout
 const closeAlerts = () => {
     const alerts = document.querySelectorAll(".alert");
     setTimeout(() => {
@@ -8,6 +9,7 @@ const closeAlerts = () => {
 };
 document.addEventListener('DOMContentLoaded', closeAlerts);
 
+// closes the laoding indicator on all pages...
 const closeLoader = () => {
     const loaderWrapper = document.querySelector('.loader-wrapper');
     window.addEventListener('load', () => {
@@ -15,5 +17,4 @@ const closeLoader = () => {
 
     });
 };
-
 closeLoader();
