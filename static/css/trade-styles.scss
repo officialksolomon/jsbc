@@ -37,6 +37,9 @@ li.active {
     border-radius: 5px;
 }
 
+.border-left {
+    border-width: 7px !important;
+}
 @media screen and (min-width: 567px) {
 
     a span::before {
