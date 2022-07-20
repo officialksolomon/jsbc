@@ -5,12 +5,26 @@
 {% endblock extra_head %}
 {% block navigation %}{% endblock navigation %}
 {% block content %}
-<section class="side-bar container-fluid h-100 m-0 p-0">
+<section class="container-fluid h-100 m-0 p-0">
 <div class="row h-100">
-{% include 'trade/dashboard-nav.html' %}
+{% include 'trade/dashboard-sidenav.html' %}
+{% comment %} content wrapper{% endcomment %}
+<div class="col">
+    <div class="row">
+       {% include 'trade/dashboard-topnav.html' %}
 
-<div class="col h-100 ">
-...
+    {% comment %} Content  {% endcomment %}
+    <div class="col-12 h-100">
+        
+    </div>
+    {% comment %} footer {% endcomment %}
+    <div class="col p-0">
+        <div class="dashboard-footer bg-white  p-2 px-4 m-0 d-flex justify-content-center align-items-center fixed-bottom">
+                <span class=" text-primary"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright@jsbc.com.ng</span>
+              
+            </div>
+    </div>
+    </div>
 </div>
 </div>
 
