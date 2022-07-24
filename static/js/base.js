@@ -19,14 +19,3 @@ const closeLoader = () => {
 };
 closeLoader();
 
-
-const closeTradeSideBar = () => {
-    const tradeSidebar = document.querySelector('#trade-sidebar');
-    console.log(tradeSidebar);
-    const tradeSidebarToggler = document.querySelector('.trade-sidebar-toggler');
-    tradeSidebarToggler.addEventListener('click', () => {
-        tradeSidebar.classList('d-none');
-    });
-};
-
-closeTradeSideBar();

@@ -1,12 +1,8 @@
 {% load  static %}
 
-
-<div id="trade-sidebar" class=" col-3 col-sm-2  p-0 pl-1 m-0 h-100 ">
-<nav  class="navbar navbar-light bg-primary h-100 w-100"> 
-        <ul class="nav navbar-nav flex-column h-100 w-100">
-            {% comment %} <li class="nav-item bg-white p-3">
-                <img src="{% static 'images/jsbc_logo.png' %}" class="img-fluid" width='100' alt="logo">
-            </li> {% endcomment %}
+<div id="trade-sidebar" class="col-3 col-sm-2  p-0 pl-1 m-0 min-vh-100 bg-primary ">
+<nav  class="navbar navbar-light bg-primary  h-100 w-100"> 
+        <ul class="nav navbar-nav flex-column vh-100 w-100">
             <hr class="text-white w-100">
             <li class="nav-item welcome w-100">
                 <a class="nav-link px-3   d-flex flex-column flex-md-row  justify-content-center justify-content-sm-start align-items-center" href="#"><i class="fas fa-laugh-wink fa-2x mr-md-2"></i> <span class="">Welcome</span></a>
@@ -14,7 +10,7 @@
             <hr class="text-white w-100">
             
             <li class="nav-item active w-100">
-                <a class="nav-link  px-3 d-flex flex-column flex-md-row  justify-content-center justify-content-sm-start align-items-center" href="{% url 'trade:index' %}"><i class="fa fa-tachometer fa-2x mr-md-2" aria-hidden="true"></i><span>Dashboard</span> <span class="sr-only">(current)</span></a>
+                <a class="nav-link   px-3 d-flex flex-column flex-md-row  justify-content-center justify-content-sm-start align-items-center" href="{% url 'trade:index' %}"><i class="fa fa-tachometer fa-2x mr-md-2" aria-hidden="true"></i><span>Dashboard</span> <span class="sr-only">(current)</span></a>
             </li>
 
 
@@ -24,14 +20,14 @@
             <li class="nav-item w-100">
                 <a class="nav-link px-3  d-flex flex-column flex-md-row  justify-content-center justify-content-sm-start align-items-center" href="#"><i class="fa fa-briefcase fa-2x mr-md-2" aria-hidden="true"></i> <span class="">Plans</span></a>
             </li>
-            <li class="nav-item w-100">
+            <li class="nav-item w-100 ">
                 <a class="nav-link px-3  d-flex flex-column flex-md-row  justify-content-center justify-content-sm-start align-items-center" href="{% url 'trade:subscription' %}"><i class="fa fa-wrench fa-2x mr-md-2" aria-hidden="true"></i> 
                 <span> Subscriptions</span>
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link px-3 text-center nav-link nav-link  d-flex flex-column flex-md-row  justify-content-center justify-content-sm-start align-items-center" href="#"><i class="fa fa-user-circle fa-2x mr-md-2" aria-hidden="true"></i> 
-                <span>Account Settings</span>
+                <a class="nav-link px-3  nav-link nav-link  d-flex flex-column flex-md-row  justify-content-center justify-content-sm-start align-items-center" href="#"><i class="fa fa-user-circle fa-2x mr-md-2" aria-hidden="true"></i> 
+                <span>Account</span>
                 </a>
             </li>
             
