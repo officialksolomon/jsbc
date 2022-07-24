@@ -9,7 +9,8 @@ a:hover::before {
 }
 
 // 
-li a {
+li a,
+a {
     color: white !important;
     font-size: 1.0rem !important;
 }
@@ -25,7 +26,8 @@ a span {
     font-size: 0.9rem !important;
 }
 
-li a:hover {
+li a:hover,
+a:hover {
     background-color: white !important;
     color: #0d6efd !important;
     border-radius: 5px;
@@ -46,6 +48,9 @@ li.active {
 .border-left {
     border-width: 7px !important;
 }
+.dropdown-item {
+    color: #0d6efd !important;
+}
 @media screen and (min-width: 567px) {
 
     a span::before {
@@ -60,3 +65,4 @@ li.active {
         font-weight:bold;
     }
 }
+
