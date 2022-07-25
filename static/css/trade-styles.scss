@@ -48,8 +48,14 @@ li.active {
 .border-left {
     border-width: 7px !important;
 }
+.dropdown-menu {
+    padding: 10px !important;
+}
 .dropdown-item {
-    color: #0d6efd !important;
+    background-color: #0d6efd;
+        color: white !important;
+        margin-bottom: 5px;
+        border-radius: 5px;
 }
 @media screen and (min-width: 567px) {
 
@@ -58,11 +64,18 @@ li.active {
     }
 }
 
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 900px) {
 
     a span {
         font-size: 0.5rem !important;
         font-weight:bold;
+        color: rgba(23, 243, 23, 0.788);
     }
 }
 
+@media screen and (max-width: 900px) {
+
+    .dropdown-menu {
+        display: none !important;
+    }
+}

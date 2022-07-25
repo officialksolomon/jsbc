@@ -10,18 +10,20 @@
 {% include 'trade/dashboard-sidenav.html' %}
 {% comment %} content wrapper{% endcomment %}
 <div class="col min-vh-100">
+
     <div class="row ">
        {% include 'trade/dashboard-topnav.html' %}
 
     {% comment %} Main Content  {% endcomment %}
-    <div class="col col-12 col-sm-4  w-100  py-4 px-3 px-md-5 vh-100">
-     <h3 class="text-black-50 p-0 mt-0">Dasboard</h3> 
+    <div class="col col-12 col-sm-4  w-100  py-4 px-3 px-md-5 vh-100 d-flex flex-column justify-content-start align-items-center overflow-scroll">
+     <h3 class="align-self-start text-black-50 p-0 mt-0">Dasboard</h3> 
+     {% comment %} row 2 {% endcomment %}
      <div class="row g-2 gx-md-5 w-100 justify-content-center justify-content-md-start" >
         {% comment %} 1 {% endcomment %}
         <div class="col-12 col-md-4 p-2">
-            <div class="rounded-3 border-left border-danger d-flex justify-content-between align-items-center bg-white p-3 py-4 shadow ">
+            <div class="rounded-3 border-left border-primary d-flex justify-content-between align-items-center bg-white p-3 py-4 shadow ">
                 <div class="d-flex flex-column justify-content-center align-items-start">
-                    <p>Subscriptions</p>
+                    <p class="text-primary">Subscriptions</p>
                     <h6>5</h6>
                 </div>
                 <i class="fa fa-briefcase fa-2x text-primary" aria-hidden="true"></i>
@@ -29,9 +31,9 @@
         </div>
         {% comment %} 2 {% endcomment %}
         <div class="col-12 col-md-4 p-2">
-            <div class="rounded-3 border-left border-primary d-flex justify-content-between align-items-center bg-white p-3 py-4 shadow ">
+            <div class="rounded-3 border-left border-success d-flex justify-content-between align-items-center bg-white p-3 py-4 shadow ">
                 <div class="d-flex flex-column justify-content-center align-items-start">
-                    <p>Active Subscriptions</p>
+                    <p class="text-success">Active Subscriptions</p>
                     <h6>5</h6>
                 </div>
                 <i class="fa fa-briefcase fa-2x text-primary" aria-hidden="true"></i>
@@ -39,9 +41,9 @@
         </div>
         {% comment %} 3 {% endcomment %}
         <div class="col-12 col-md-4 p-2">
-            <div class="rounded-3 border-left border-primary d-flex justify-content-between align-items-center bg-white p-3 py-4 shadow ">
+            <div class="rounded-3 border-left border-warning d-flex justify-content-between align-items-center bg-white p-3 py-4 shadow ">
                 <div class="d-flex flex-column justify-content-center align-items-start">
-                    <p>Available Plans</p>
+                    <p class="text-warning">Available Plans</p>
                     <h6>5</h6>
                 </div>
                 <i class="fa fa-briefcase fa-2x text-primary" aria-hidden="true"></i>
@@ -49,6 +51,40 @@
         </div>
        {% comment %} end {% endcomment %}
      </div>  
+    <hr class="text-black w-100">
+     {% comment %} row 2 {% endcomment %}
+     <div class="row w-100 g-4 p-0 justify-content-center justify-content-md-start">
+        <div class="col-12 col-sm-6">
+            <div class="d-flex flex-column justify-content-center align-items-center  border border-primary p-3 py-5 rounded-3 bg-white">
+                <h5 class="text-center">You have not subscribed to any plan.</h4>
+                <p class="text-center">You can  select from available plans  tailored to <br> suit your budget.</p>
+                <a name="subscribe" id="subscribe-btn" class="btn btn-primary" href="#" role="button">Get Started  </a>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 ">
+            <div class="d-flex flex-column justify-content-center align-items-center  border border-primary p-3 py-5 rounded-3 bg-white">
+                <h5 class="text-center">View & Susbcribe to available plans.</h5>
+                <p class="text-center">Findout more about ours plans and how they <br> suit your needs.</p>
+                <a name="" id="subscribe-btn" class="btn btn-primary" href="#" role="button">Get Started  </a>
+            </div>
+        </div>
+    </div>
+    
+
+     {% comment %} row 3 {% endcomment %}
+     <div class="row mt-3 w-100 g-4 p-0 justify-content-center justify-content-md-start">
+        <div class="col-12 col-sm-6">
+            <div class="d-flex flex-column justify-content-center align-items-center  border border-primary p-3 py-5 rounded-3 bg-white">
+              <canvas id="myChart1" class="w-100" height="200"></canvas>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 ">
+            <div class="d-flex flex-column justify-content-center align-items-center  border border-primary p-3 py-5 rounded-3 bg-white">
+               <canvas id="myChart2" class="w-100" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    {% comment %} end rows... {% endcomment %}
     </div>
    {% comment %} footer {% endcomment %}
    {% include 'trade/dashboard-footer.html' %}
@@ -56,5 +92,6 @@
 </div>
 </div>
 </section>
+<script src="{% static 'js/myCharts.js' %}"></script>
 {% endblock content %}
 {% block footer %}{% endblock footer %}
